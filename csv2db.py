@@ -10,7 +10,7 @@ import pymysql
 pymysql.install_as_MySQLdb()
 
 # path for loading file
-path = 'C:\\Users\\waikorea\\Dropbox\\datafeed\\'
+path = 'path of the location of the file'
 
 # assign datetime of today
 today = dt.datetime.now(pytz.timezone('Asia/Seoul')).strftime('%Y%m%d')
@@ -38,7 +38,7 @@ if __name__ == "__main__":
 
             if int(now[4:]) % 10 == 0:
                 # load data from saved csv file
-                daily_data = pd.read_csv('C:\\Users\\waikorea\\Desktop\\NH\\CSV\\' + today + '.csv')
+                daily_data = pd.read_csv(path + today + '.csv')
                 # save data to DB table
                 daily_data.to_sql('input_data_csv', con=engine, if_exists='replace')
 
@@ -58,10 +58,10 @@ if __name__ == "__main__":
         try:
             # create connection instance
             waidb = mysql.connector.connect(
-                host='119.205.211.179',
-                user='limpst',
-                password='waikoreat2',
-                database='waikorea_port')
+                host='host',
+                user='username',
+                password='password',
+                database='database name')
             # create cursor instance
             cursor = waidb.cursor()
             # write sql query
