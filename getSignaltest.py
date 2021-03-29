@@ -81,6 +81,8 @@ usd_signal = signal_is(usd_data.iloc[-1, 1], usd_data.iloc[-2, 1])
 df_signal = df_signal.append(pd.Series([now, kospi_signal, usd_signal], index=df_signal.columns), ignore_index=True)
 
 
+
+
 print(kospi_data[-2:])
 print(kospi_signal)
 print('--------------')
