@@ -44,7 +44,7 @@ def signal_is(last1, last2):
 today = dt.datetime.now(pytz.timezone('Asia/Seoul')).strftime('%Y%m%d')
 
 # create engine to connect to DB server
-engine = create_engine("mysql+mysqldb://limpst:" + "waikoreat2" + "@119.205.211.179/waikorea_port", encoding='utf-8')
+engine = create_engine("mysql+mysqldb://userID:" + "name" + "@server/DBname", encoding='utf-8')
 
 # create DataFrame for storing signal data
 df_signal = pd.DataFrame(columns=['Time', 'kospi_Signal', 'usd_Signal'])
