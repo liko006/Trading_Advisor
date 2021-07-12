@@ -283,15 +283,6 @@ def check_insert_data(datr, latest_data):
         else:
             insert_amt_data_to_sql(latest_data)
 
-    # if datr.shape[0] == 2 and datr.index[0] == 0 and n == 0:
-    #     latest_data = datr.tail(1)
-    #     # insert last data to sql server
-    #     if len(datr.columns) <= 20:
-    #         insert_price_data_to_sql(latest_data)
-    #     else:
-    #         insert_amt_data_to_sql(latest_data)
-    #     n += 1
-
     if datr.shape[0] == 3 and datr.index[0] == 1:
         datr.drop(1, inplace=True)
         temp_data = datr.head(1)
@@ -303,18 +294,6 @@ def check_insert_data(datr, latest_data):
         else:
             insert_amt_data_to_sql(temp_data)
             insert_amt_data_to_sql(latest_data)
-
-    # if datr.shape[0] == 3 and datr.index[0] == 0 and n == 0:
-    #     latest_data = datr.tail(1)
-    #     temp_data = datr.head(2).tail(1)
-    #     # insert last data to sql server
-    #     if len(datr.columns) <= 20:
-    #         insert_price_data_to_sql(temp_data)
-    #         insert_price_data_to_sql(latest_data)
-    #     else:
-    #         insert_amt_data_to_sql(temp_data)
-    #         insert_amt_data_to_sql(latest_data)
-    #     n += 1
 
     if datr.shape[0] >= 2:
         if len(datr.columns) <= 20:
